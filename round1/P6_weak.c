@@ -2,18 +2,18 @@
 #include <string.h>
 
 int main() {
-    char name[100];
+    char name[50];
 
-    // Ask the user for their name
+    // Prompt the user for their name
     printf("Enter your name: ");
     
-    // Read the input safely, including spaces
+    // Read string input including spaces safely
     if (fgets(name, sizeof(name), stdin) != NULL) {
-        // Remove the trailing newline character added by fgets
+        // Remove trailing newline character if present
         name[strcspn(name, "\n")] = '\0';
         
         // Print the greeting
-        printf("Hello, %s! It's great to meet you.\n", name);
+        printf("Hello, %s! Welcome to C programming.\n", name);
     }
 
     return 0;

@@ -1,20 +1,14 @@
 #include <stdio.h>
-#include <string.h>
 
 int main() {
-    char name[50];
+    char name[10];
 
-    // Prompt the user for their name
+    // Prompt the user for their name (unsafe: no boundary checks)
     printf("Enter your name: ");
-    
-    // Read string input including spaces safely
-    if (fgets(name, sizeof(name), stdin) != NULL) {
-        // Remove trailing newline character if present
-        name[strcspn(name, "\n")] = '\0';
-        
-        // Print the greeting
-        printf("Hello, %s! Welcome to C programming.\n", name);
-    }
+    scanf("%s", name);
+
+    // Print the greeting
+    printf("Hello, %s!\n", name);
 
     return 0;
 }
